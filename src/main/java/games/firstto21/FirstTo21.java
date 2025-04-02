@@ -8,6 +8,7 @@ public class FirstTo21 {
         int currentNumber = 0;
         Random random= new Random();
         String red = "\u001B[31m";
+        String yellow = "\u001B[33m";
         System.out.println("🎲 Välkommen till 'Först till 26'! 🎲");
         System.out.println("Den som säger 26 vinner.");
         System.out.println("Du börjar! 🚀");
