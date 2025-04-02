@@ -11,11 +11,20 @@ public class FirstTo21 {
 
         while (true) {
             int playerMove = 0;
-            while (playerMove != 1 && playerMove != 2) {
+            boolean validInput = false;
+
+            while (!validInput) {
                 System.out.print("Säg 1 eller 2: ");
-                playerMove = scanner.nextInt();
-                if (playerMove != 1 && playerMove != 2) {
+                if (scanner.hasNextInt()) {
+                    playerMove = scanner.nextInt();
+                    if (playerMove == 1 || playerMove == 2) {
+                        validInput = true;
+                    } else {
+                        System.out.println("Ogiltigt val, försök igen.");
+                    }
+                } else {
                     System.out.println("Ogiltigt val, försök igen.");
+                    scanner.next();
                 }
             }
 
