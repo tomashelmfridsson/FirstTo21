@@ -6,6 +6,7 @@ public class FirstTo21 {
         Scanner scanner = new Scanner(System.in);
         int currentNumber = 0;
         String red = "\u001B[31m";
+        String yellow ="\u001B[33m";
         System.out.println("Välkommen till spelet! Den som säger 26 vinner.");
         System.out.println("Du börjar!");
 
@@ -23,7 +24,7 @@ public class FirstTo21 {
             System.out.println("Du sa: " + currentNumber);
 
             if (currentNumber >= 26) {
-                System.out.println("Grattis! Du vinner!");
+                System.out.println(yellow+"Grattis! Du vinner!");
                 break;
             }
 
@@ -32,7 +33,7 @@ public class FirstTo21 {
             System.out.println("Datorn säger: " + currentNumber);
 
             if (currentNumber >= 26) {
-                System.out.println(red+"Datorn vinner! Bättre lycka nästa gång.");
+                System.out.println(red +"Datorn vinner! Bättre lycka nästa gång.");
                 break;
             }
         }
