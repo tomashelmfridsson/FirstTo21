@@ -16,8 +16,8 @@ public class FirstTo21 {
         String red = "\u001B[31m";
         System.out.println("Välkommen till spelet! Den som säger 21 vinner.");
         System.out.println("Välj svårighetsgrad genom att skriva Easy, Medium eller Hard");
-        String s = scanner.nextLine();
-        switch(s.toLowerCase())
+
+        switch(scanner.nextLine().toLowerCase())
         {
             case "easy":
                 currentDiff = DIFFICULTY.EASY;
