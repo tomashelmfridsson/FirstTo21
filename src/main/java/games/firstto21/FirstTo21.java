@@ -1,47 +1,52 @@
 package games.firstto21;
+import java.util.Random;
 import java.util.Scanner;
 
 public class FirstTo21 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int currentNumber = 0;
+        Random random= new Random();
         String red = "\u001B[31m";
-        System.out.println("Välkommen till spelet! Den som säger 21 vinner.");
-        System.out.println("Du börjar!");
+        String yellow = "\u001B[33m";
+        System.out.println("🎲 Welcome to the game! First one get 26 wins. 🎲");
+        System.out.println("Den som säger 26 vinner.");
+        System.out.println("You Start! 🚀");
 
         while (true) {
             int playerMove = 0;
             boolean validInput = false;
 
             while (!validInput) {
-                System.out.print("Säg 1 eller 2: ");
+                System.out.print("Write 1 or 2: ");
                 if (scanner.hasNextInt()) {
                     playerMove = scanner.nextInt();
                     if (playerMove == 1 || playerMove == 2) {
                         validInput = true;
                     } else {
-                        System.out.println("Ogiltigt val, försök igen.");
+                        System.out.println("Invalid choice, try again..");
                     }
                 } else {
-                    System.out.println("Ogiltigt val, försök igen.");
+                    System.out.println("Invalid choice, try again..");
                     scanner.next();
                 }
             }
 
             currentNumber += playerMove;
-            System.out.println("Du sa: " + currentNumber);
+            System.out.println("You wrote: " + currentNumber);
 
-            if (currentNumber >= 21) {
-                System.out.println("Grattis! Du vinner!");
+
+            if (currentNumber >= 26) {
+                System.out.println(yellow+"Congratulations! You are the winner!");
                 break;
             }
 
-            int computerMove = ((currentNumber+1) % 3) == 0 ? 1 : 2;
+            int computerMove = random.nextInt(2) + 1;
             currentNumber += computerMove;
-            System.out.println("Datorn säger: " + currentNumber);
+            System.out.println("Computer wrote: " + currentNumber);
 
-            if (currentNumber >= 21) {
-                System.out.println(red+"Datorn vinner! Bättre lycka nästa gång.");
+            if (currentNumber >= 26) {
+                System.out.println(red +"The Computer Wins! Better luck next time.");
                 break;
             }
         }
