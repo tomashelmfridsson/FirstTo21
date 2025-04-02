@@ -1,4 +1,5 @@
 package games.firstto21;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -12,10 +13,12 @@ public class FirstTo21 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int currentNumber = 0;
+
         DIFFICULTY currentDiff;
         String red = "\u001B[31m";
-        System.out.println("Välkommen till spelet! Den som säger 21 vinner.");
-        System.out.println("Välj svårighetsgrad genom att skriva Easy, Medium eller Hard");
+        String yellow = "\u001B[33m";
+        System.out.println("🎲 Welcome to the game! First one get 26 wins. 🎲");
+        System.out.println("Choose difficulty bby typing: Easy, Medium eller Hard");
 
         switch(scanner.nextLine().toLowerCase())
         {
@@ -30,33 +33,34 @@ public class FirstTo21 {
                 break;
             default:
                 currentDiff = DIFFICULTY.MEDIUM;
-                System.out.println("Ingen svårighetsgrad vald så vi går med Medium");
+                System.out.println("No difficulty picked so Medium is chosen by default");
                 break;
         }
-        System.out.println("Då kan spelet börja.");
-        System.out.println("Du börjar!");
+        System.out.println("Then the game can begin");
+        System.out.println("You Start! 🚀");
 
         while (true) {
             int playerMove = 0;
             while (playerMove != 1 && playerMove != 2) {
-                System.out.print("Säg 1 eller 2: ");
+                System.out.print("Choose 1 or 2: ");
                 try{
                     playerMove = Integer.parseInt(scanner.nextLine());
                 } catch (Exception e) {
-                    System.out.println("Ogiltigt val, försök igen.");
+                    System.out.println("Invalid choice, try again..");
                     continue;
                 }
 
                 if (playerMove != 1 && playerMove != 2) {
-                    System.out.println("Ogiltigt val, försök igen.");
+                    System.out.println("Invalid choice, try again..");
                 }
             }
 
             currentNumber += playerMove;
-            System.out.println("Du sa: " + currentNumber);
+            System.out.println("You wrote: " + currentNumber);
 
-            if (currentNumber >= 21) {
-                System.out.println("Grattis! Du vinner!");
+
+            if (currentNumber >= 26) {
+                System.out.println(yellow+"Congratulations! You are the winner!");
                 break;
             }
 
@@ -91,12 +95,11 @@ public class FirstTo21 {
                     break;
             }
 
-
             currentNumber += computerMove;
-            System.out.println("Datorn säger: " + currentNumber);
+            System.out.println("Computer wrote: " + currentNumber);
 
-            if (currentNumber >= 21) {
-                System.out.println(red+"Datorn vinner! Bättre lycka nästa gång.");
+            if (currentNumber >= 26) {
+                System.out.println(red +"The Computer Wins! Better luck next time.");
                 break;
             }
         }
