@@ -6,33 +6,33 @@ public class FirstTo21 {
         Scanner scanner = new Scanner(System.in);
         int currentNumber = 0;
         String red = "\u001B[31m";
-        System.out.println("Välkommen till spelet! Den som säger 21 vinner.");
-        System.out.println("Du börjar!");
+        System.out.println("Welcome to the game! First one get 21 wins.");
+        System.out.println("You start!");
 
         while (true) {
             int playerMove = 0;
             while (playerMove != 1 && playerMove != 2) {
-                System.out.print("Säg 1 eller 2: ");
+                System.out.print("Write 1 or 2: ");
                 playerMove = scanner.nextInt();
                 if (playerMove != 1 && playerMove != 2) {
-                    System.out.println("Ogiltigt val, försök igen.");
+                    System.out.println("Invalid choice, try again.");
                 }
             }
 
             currentNumber += playerMove;
-            System.out.println("Du sa: " + currentNumber);
+            System.out.println("You wrote: " + currentNumber);
 
             if (currentNumber >= 21) {
-                System.out.println("Grattis! Du vinner!");
+                System.out.println("Congratulations! You are the winner!");
                 break;
             }
 
             int computerMove = ((currentNumber+1) % 3) == 0 ? 1 : 2;
             currentNumber += computerMove;
-            System.out.println("Datorn säger: " + currentNumber);
+            System.out.println("Computer wrote: " + currentNumber);
 
             if (currentNumber >= 21) {
-                System.out.println(red+"Datorn vinner! Bättre lycka nästa gång.");
+                System.out.println(red+"The Computer Wins! Better luck next time.");
                 break;
             }
         }
