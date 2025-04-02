@@ -6,8 +6,9 @@ public class FirstTo21 {
         Scanner scanner = new Scanner(System.in);
         int currentNumber = 0;
         String red = "\u001B[31m";
-        System.out.println("Välkommen till spelet! Den som säger 21 vinner.");
-        System.out.println("Du börjar!");
+        System.out.println("🎲 Välkommen till 'Först till 21'! 🎲");
+        System.out.println("Den som säger 21 vinner.");
+        System.out.println("Du börjar! 🚀");
 
         while (true) {
             int playerMove = 0;
