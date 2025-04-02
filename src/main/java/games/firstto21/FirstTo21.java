@@ -10,16 +10,24 @@ public class FirstTo21 {
         String red = "\u001B[31m";
         String yellow = "\u001B[33m";
         System.out.println("🎲 Welcome to the game! First one get 26 wins. 🎲");
-        System.out.println("Den som säger 26 vinner.");
         System.out.println("You Start! 🚀");
 
         while (true) {
             int playerMove = 0;
-            while (playerMove != 1 && playerMove != 2) {
+            boolean validInput = false;
+
+            while (!validInput) {
                 System.out.print("Write 1 or 2: ");
-                playerMove = scanner.nextInt();
-                if (playerMove != 1 && playerMove != 2) {
-                    System.out.println("Invalid choice, try again.");
+                if (scanner.hasNextInt()) {
+                    playerMove = scanner.nextInt();
+                    if (playerMove == 1 || playerMove == 2) {
+                        validInput = true;
+                    } else {
+                        System.out.println("Invalid choice, try again..");
+                    }
+                } else {
+                    System.out.println("Invalid choice, try again..");
+                    scanner.next();
                 }
             }
 
