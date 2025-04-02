@@ -10,7 +10,6 @@ public class FirstTo21 {
         String red = "\u001B[31m";
         String yellow = "\u001B[33m";
         System.out.println("🎲 Welcome to the game! First one get 26 wins. 🎲");
-        System.out.println("Den som säger 26 vinner.");
         System.out.println("You Start! 🚀");
 
         while (true) {
