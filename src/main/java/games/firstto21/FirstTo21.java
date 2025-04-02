@@ -1,5 +1,4 @@
 package games.firstto21;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -18,7 +17,7 @@ public class FirstTo21 {
         String red = "\u001B[31m";
         String yellow = "\u001B[33m";
         System.out.println("🎲 Welcome to the game! First one get 26 wins. 🎲");
-        System.out.println("Choose difficulty bby typing: Easy, Medium eller Hard");
+        System.out.println("Choose difficulty by typing: Easy, Medium eller Hard");
 
         switch(scanner.nextLine().toLowerCase())
         {
